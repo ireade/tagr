@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Tagr</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div class="container">
+
+		<header>
+			<hgroup>
+				<h1>Tagr</h1>
+				<h2>A small web app made with the Instagram API</h2>
+			</hgroup>
+			
+			<form id="search-tagr">
+				<label for="searchText">What are you looking for?</label>
+
+				<span class="hastag">#</span>
+				<input type="text" placeholder="turndownforwhat" id="searchText">
+				<input type="submit" id="submit" value="Search">
+			</form>
+		</header>
+
+		<ul id="pictures"></ul>
+
+		<script id="grams-template" type="text/x-handlebars-template">
+		{{#each Grams}}
+			<li class="gram">
+			<a href="{{link}}" target="_blank"><img src="{{images.low_resolution.url}}"></a>
+			<div class="meta">
+				<a href="https://instagram.com/{{user.username}}" target="_blank">{{user.full_name}}</a> | {{likes.count}} <span class="heart">&#10084;</span>
+
+				<p>{{caption.text}}</p>
+				
+			</div>
+			</li>
+		{{/each}}
+		</script>
+	</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/handlebars.js"></script>
+    <script src="js/access-token.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
