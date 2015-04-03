@@ -167,15 +167,12 @@ li {
 #pictures .meta {
 	background-color: #fff;
 	padding: 10px;
+	text-align: center;
 
-	max-height: 220px;
 	overflow: hidden;
 
 }
 
-#pictures .meta p {
-	margin-top: 1rem;
-}
 
 @media screen and (max-width: 700px) {
 

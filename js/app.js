@@ -12,6 +12,8 @@ $(document).ready(function() {
 			var template = Handlebars.compile(source);
 			var output = template( {Grams: data.data} );
 
+			console.log(data.data);
+
 			
 			if (data.data.length == 0) {
 				$("#pictures").html('<p class="error">Sorry, nothing turned up! Please try again</p>')
